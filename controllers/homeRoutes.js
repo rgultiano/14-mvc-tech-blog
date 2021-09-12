@@ -3,14 +3,7 @@ const { withAuth } = require('../utils/auth');
 
 // render homepage as index
 router.get('/', async (req, res) => {
-  if (req.session.logged_in) {
-    console.log({user_id: req.session.user_id});
-    res.locals.sess_user_id = req.session.user_id;
-
-    res.render('home');
-    return;
-  }
-  res.render('index'); 
+  res.render('home'); 
 });
 
 // render the login page
